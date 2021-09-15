@@ -52,6 +52,12 @@
     <Compile Include="attendanceForm.designer.cs">
       <DependentUpon>attendanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReplyYNForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReplyYNForm.Designer.cs">
+      <DependentUpon>ReplyYNForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReplyForm.resx">
       <DependentUpon>ReplyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReplyYNForm.resx">
+      <DependentUpon>ReplyYNForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenshotsForm.resx">
       <DependentUpon>ScreenshotsForm.cs</DependentUpon>

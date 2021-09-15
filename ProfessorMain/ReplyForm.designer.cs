@@ -29,95 +29,103 @@ namespace WinForms_Reply
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblNum = new System.Windows.Forms.Label();
+            this.txtAnswer = new System.Windows.Forms.TextBox();
+            this.grpStd = new System.Windows.Forms.GroupBox();
+            this.grpAnswer = new System.Windows.Forms.GroupBox();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.grpStd.SuspendLayout();
+            this.grpAnswer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "이름 : ";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(13, 15);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(41, 12);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "이름 : ";
             // 
-            // label2
+            // lblNum
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(188, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "학번 : ";
+            this.lblNum.AutoSize = true;
+            this.lblNum.Location = new System.Drawing.Point(188, 15);
+            this.lblNum.Name = "lblNum";
+            this.lblNum.Size = new System.Drawing.Size(41, 12);
+            this.lblNum.TabIndex = 0;
+            this.lblNum.Text = "학번 : ";
             // 
-            // textBox1
+            // txtAnswer
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(13, 35);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(524, 104);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TabStop = false;
+            this.txtAnswer.BackColor = System.Drawing.Color.White;
+            this.txtAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAnswer.Location = new System.Drawing.Point(13, 28);
+            this.txtAnswer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAnswer.Multiline = true;
+            this.txtAnswer.Name = "txtAnswer";
+            this.txtAnswer.ReadOnly = true;
+            this.txtAnswer.Size = new System.Drawing.Size(524, 84);
+            this.txtAnswer.TabIndex = 1;
+            this.txtAnswer.TabStop = false;
             // 
-            // groupBox2
+            // grpStd
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(43, 20);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(557, 43);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
+            this.grpStd.BackColor = System.Drawing.Color.White;
+            this.grpStd.Controls.Add(this.lblNum);
+            this.grpStd.Controls.Add(this.lblName);
+            this.grpStd.Location = new System.Drawing.Point(43, 16);
+            this.grpStd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpStd.Name = "grpStd";
+            this.grpStd.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpStd.Size = new System.Drawing.Size(557, 34);
+            this.grpStd.TabIndex = 3;
+            this.grpStd.TabStop = false;
             // 
-            // groupBox1
+            // grpAnswer
             // 
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(43, 76);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(557, 178);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "답변";
+            this.grpAnswer.AutoSize = true;
+            this.grpAnswer.BackColor = System.Drawing.Color.White;
+            this.grpAnswer.Controls.Add(this.txtAnswer);
+            this.grpAnswer.Location = new System.Drawing.Point(43, 61);
+            this.grpAnswer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpAnswer.Name = "grpAnswer";
+            this.grpAnswer.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpAnswer.Size = new System.Drawing.Size(557, 142);
+            this.grpAnswer.TabIndex = 3;
+            this.grpAnswer.TabStop = false;
+            this.grpAnswer.Text = "답변";
             // 
-            // button1
+            // btnOk
             // 
-            this.button1.Location = new System.Drawing.Point(513, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "확인";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOk.Location = new System.Drawing.Point(513, 209);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 26);
+            this.btnOk.TabIndex = 4;
+            this.btnOk.Text = "확인";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // ReplyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(621, 308);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(621, 246);
+            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.grpAnswer);
+            this.Controls.Add(this.grpStd);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ReplyForm";
             this.Text = "학생 응답";
             this.Load += new System.EventHandler(this.ReplyForm_Load);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpStd.ResumeLayout(false);
+            this.grpStd.PerformLayout();
+            this.grpAnswer.ResumeLayout(false);
+            this.grpAnswer.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,12 +133,12 @@ namespace WinForms_Reply
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblNum;
+        private System.Windows.Forms.TextBox txtAnswer;
+        private System.Windows.Forms.GroupBox grpStd;
+        private System.Windows.Forms.GroupBox grpAnswer;
+        private System.Windows.Forms.Button btnOk;
     }
 }
 

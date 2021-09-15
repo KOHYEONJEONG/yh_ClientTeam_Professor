@@ -29,74 +29,77 @@ namespace ProfessorMain
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pbScreenshot = new System.Windows.Forms.PictureBox();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblNum = new System.Windows.Forms.Label();
+            this.btnOK = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbScreenshot)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbScreenshot
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(35, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(448, 424);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbScreenshot.Location = new System.Drawing.Point(35, 37);
+            this.pbScreenshot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbScreenshot.Name = "pbScreenshot";
+            this.pbScreenshot.Size = new System.Drawing.Size(448, 339);
+            this.pbScreenshot.TabIndex = 0;
+            this.pbScreenshot.TabStop = false;
             // 
-            // label2
+            // lblTime
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(317, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "쵤영시간";
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("맑은 고딕", 9F);
+            this.lblTime.Location = new System.Drawing.Point(317, 19);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(55, 15);
+            this.lblTime.TabIndex = 1;
+            this.lblTime.Text = "쵤영시간";
             // 
-            // label1
+            // lblName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "이름 : 고구마 ";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(35, 19);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(81, 12);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "이름 : 고구마 ";
             // 
-            // label3
+            // lblNum
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(123, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "학번 : 20210907";
+            this.lblNum.AutoSize = true;
+            this.lblNum.Location = new System.Drawing.Point(129, 19);
+            this.lblNum.Name = "lblNum";
+            this.lblNum.Size = new System.Drawing.Size(89, 12);
+            this.lblNum.TabIndex = 2;
+            this.lblNum.Text = "학번 : 20210907";
             // 
-            // button1
+            // btnOK
             // 
-            this.button1.Location = new System.Drawing.Point(408, 481);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "확인";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOK.Location = new System.Drawing.Point(408, 385);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 22);
+            this.btnOK.TabIndex = 3;
+            this.btnOK.Text = "확인";
+            this.btnOK.UseVisualStyleBackColor = true;
             // 
             // ImageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(527, 516);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(527, 418);
+            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.lblNum);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.pbScreenshot);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ImageForm";
             this.Text = "고구마20210903의 스크린샷";
             this.Load += new System.EventHandler(this.ImageForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbScreenshot)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,10 +107,10 @@ namespace ProfessorMain
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pbScreenshot;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblNum;
+        private System.Windows.Forms.Button btnOK;
     }
 }

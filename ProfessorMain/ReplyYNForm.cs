@@ -8,30 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinForms_Reply
+namespace ProfessorMain
 {
-    public partial class ReplyForm : Form
+    public partial class ReplyYNForm : Form
     {
-        private String answer;
+
+        private int answer;
         private String stdName;
         private String stdNum;
 
-        public ReplyForm()
+        public ReplyYNForm()
         {
             InitializeComponent();
 
             //학생 정보 받아옴
-            answer = "The US Federal Aviation Administration has grounded Virgin Galactic flights as it investigates how";
+            answer = 0;
             stdName = "고구마";
             stdNum = "20210915";
-    }
 
-        private void ReplyForm_Load(object sender, EventArgs e)
-        {
-            lblName.Text = stdName;
-            lblNum.Text = stdNum;
-            txtAnswer.Text = answer;
+            this.lblName.Text = stdName;
+            this.lblNum.Text = stdNum;
 
+            if (answer == 0)
+            {
+                this.radioYes.Checked = true;
+            }
+            else
+            {
+                this.radioYes.Checked = false;
+            }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
