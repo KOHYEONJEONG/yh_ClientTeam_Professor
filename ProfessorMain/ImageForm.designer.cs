@@ -50,29 +50,29 @@ namespace ProfessorMain
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("맑은 고딕", 9F);
-            this.lblTime.Location = new System.Drawing.Point(317, 19);
+            this.lblTime.Location = new System.Drawing.Point(275, 19);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(55, 15);
+            this.lblTime.Size = new System.Drawing.Size(66, 15);
             this.lblTime.TabIndex = 1;
-            this.lblTime.Text = "쵤영시간";
+            this.lblTime.Text = "쵤영시간 : ";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(35, 19);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(81, 12);
+            this.lblName.Size = new System.Drawing.Size(41, 12);
             this.lblName.TabIndex = 2;
-            this.lblName.Text = "이름 : 고구마 ";
+            this.lblName.Text = "이름 : ";
             // 
             // lblNum
             // 
             this.lblNum.AutoSize = true;
             this.lblNum.Location = new System.Drawing.Point(129, 19);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(89, 12);
+            this.lblNum.Size = new System.Drawing.Size(41, 12);
             this.lblNum.TabIndex = 2;
-            this.lblNum.Text = "학번 : 20210907";
+            this.lblNum.Text = "학번 : ";
             // 
             // btnOK
             // 
@@ -83,6 +83,7 @@ namespace ProfessorMain
             this.btnOK.TabIndex = 3;
             this.btnOK.Text = "확인";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // ImageForm
             // 

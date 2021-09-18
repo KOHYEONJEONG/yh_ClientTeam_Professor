@@ -36,12 +36,18 @@ namespace ProfessorMain
         {
             this.Text = "스크린샷";
 
-            lblName.Text = stdName;
-            lblNum.Text = stdNum;
+            lblName.Text += stdName;
+            lblNum.Text += stdNum;
 
-            lblTime.Text = Sstime;
+            lblTime.Text += Sstime;
             Image img = Properties.Resources.sky3;
             pbScreenshot.Image = img;
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            //폼 닫기
+            this.Close();
         }
     }
 }
