@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,41 +11,53 @@ using System.Windows.Forms;
 
 namespace ProfessorMain
 {
+
+
     public partial class ImageForm : Form
     {
-        //private String img_name; //선택된 이미지 이름
-        //private String img_time; //시간
-        private String Sstime = DateTime.Now.ToString("g");
 
+        //학생 정보
+        private String stdName;
+        private String stdNum;
+
+        private String Sstime = DateTime.Now.ToString("g");
+        Image image;
         public ImageForm()
         {
             InitializeComponent();
         }
-
-        public ImageForm(string name, String time)
+        
+        public ImageForm(string name, String time,Image image)//이미지 받아옴
         {
             InitializeComponent();
-            //img_name = name; //선택된 이미지 이름 받아옴
-            //img_time = time; // 시간
+
+            //학생 정보 받아옴
+            stdName = "고구마";
+            stdNum = "20210915";
+            this.image = image;//받아온 이미지 저장
         }
+
+       
 
         private void ImageForm_Load(object sender, EventArgs e)
         {
-            /*
-            if (img_name != "" && img_name != null)
-            {
-                // 학생이름(학번)
-                this.Text = img_name + "의 스크린샷";
-                label2.Text = img_time;
-                Image img = Properties.Resources.sky3;
-                pictureBox1.Image = img;
-            }
-            */
-            // 학생이름(학번)
             this.Text = "스크린샷";
-            label2.Text = Sstime;
-            Image img = Properties.Resources.sky3;
-            pictureBox1.Image = img;
+
+            lblName.Text += stdName;
+            lblNum.Text += stdNum;
+
+            lblTime.Text += Sstime;
+            pbScreenshot.Image = image;
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            //폼 닫기
+            this.Close();
+        }
+
+        
+
+
     }
 }

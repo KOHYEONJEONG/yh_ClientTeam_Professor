@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace ProfessorMain
@@ -41,12 +42,13 @@ namespace ProfessorMain
 
             for (int i = 0; i < teststu.Length / 2; i++) //접속학생 리스트에 학생 추가
                 {
-                    studList.Rows.Add(false, teststu[i, 0] , teststu[i, 1], img1, "","");
+                    studList.Rows.Add(false, teststu[i, 0] , teststu[i, 1], Properties.Resources._default, "","");
                 }
 
-            studList.Rows[1].Cells[3].Value = img2;
+            studList.Rows[1].Cells[3].Value = img1;
+            studList.Rows[0].Cells[3].Value = img2;
 
-            
+
 
             for (int i = 0; i < teststu.Length / 2; i++) //미접속학생 리스트에 학생 추가
             {
@@ -56,6 +58,10 @@ namespace ProfessorMain
                 unconstu.Items.Add(lvi);
 
             }
+
+            className.Text = "수업 이름";//수업이름 설정
+            classTime.Text = "00:00 ~ 00:00";//수업 시간 설정
+                                            //시간되면 자동 수업 시작하게 설정하기
 
         }
 
@@ -114,7 +120,6 @@ namespace ProfessorMain
                 if ((bool)studList.Rows[i].Cells[0].Value)//체크여부 확인
                 {
                     checkstu.Add(studList.Rows[i].Cells[1].Value as String);//리스트에 추가
-                    textBox1.Text += studList.Rows[i].Cells[1].Value;
                 }
             }
         }
@@ -136,7 +141,8 @@ namespace ProfessorMain
 
         private void attendbtn_Click(object sender, EventArgs e)
         {
-
+            attendBtn.Visible = false;
+                            //수업 시간 받고 교시마다 활성화 되게 해야 함
         }
 
         private void studList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -161,9 +167,8 @@ namespace ProfessorMain
 
             Image img = grid.Rows[curR].Cells[curC].Value as Image;
 
-            textBox1.Text = img.ToString();
 
-            ImageForm img_form = new ImageForm(img.ToString(), Sstime);
+            ImageForm img_form = new ImageForm(img.ToString(), Sstime, img);
             img_form.ShowDialog();
 
         }
@@ -173,5 +178,45 @@ namespace ProfessorMain
             attendanceForm attendanceForm = new attendanceForm();
             attendanceForm.Show();
         }
+
+        private void className_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        DateTime start_t;
+
+        private void startBtn_Click(object sender, EventArgs e)
+        {//수업 시작 버튼
+            attendBtn.Visible = true;//출석버튼 보이게
+            startBtn.Visible = false;//시작버튼 숨기기
+
+            start_t = System.DateTime.Now;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            nowTime.Text = System.DateTime.Now.ToString("hh:mm:ss");//시계
+            if(System.DateTime.Now.Second - start_t.Second >= 10 && startBtn.Visible == false)//수업 시작버튼 누르고 10초뒤 수업종료 버튼 활성화(테스트용)
+            {                                                                                  //수업 시간 받아와서 종료시간에 활성화
+                endBtn.Visible = true;
+            }
+
+            if(System.DateTime.Now.ToString("mm:ss") == "45:00")//수업 종료 5분전, 수업종료 알림 (수정)
+            {
+                MessageBox.Show("수업종료 5분전 입니다.");
+            }
+            else if(System.DateTime.Now.ToString("mm:ss") == "50:00")
+            {
+                MessageBox.Show("수업종료 시간 입니다");
+            }
+        }
+
+        private void endBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        
     }
 }
