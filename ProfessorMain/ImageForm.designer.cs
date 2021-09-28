@@ -39,10 +39,14 @@ namespace ProfessorMain
             // 
             // pbScreenshot
             // 
+            this.pbScreenshot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pbScreenshot.Location = new System.Drawing.Point(35, 37);
             this.pbScreenshot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbScreenshot.Name = "pbScreenshot";
             this.pbScreenshot.Size = new System.Drawing.Size(448, 339);
+            this.pbScreenshot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbScreenshot.TabIndex = 0;
             this.pbScreenshot.TabStop = false;
             // 
@@ -76,6 +80,7 @@ namespace ProfessorMain
             // 
             // btnOK
             // 
+            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOK.Location = new System.Drawing.Point(408, 385);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";

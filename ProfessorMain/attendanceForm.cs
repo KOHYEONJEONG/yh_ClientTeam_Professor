@@ -35,11 +35,14 @@ namespace ProfessorMain
             }
             attendList.Columns.Add("1주");//열 추가
 
-            for (int i = 0; i < teststu.Length / 2; i++) //미접속학생 리스트에 학생 추가
+            for (int i = 0; i < teststu.Length / 2; i++) //출석여부 추가
             {
                 attendList.Items[i].SubItems.Add("출석");
 
             }
+
+            attendName.Text = "수업이름" + " 출석부";
+            gradeLb.Text = "학년" + " / " + "반";
         }
     }
 }

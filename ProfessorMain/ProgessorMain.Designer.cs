@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.allcheck = new System.Windows.Forms.CheckBox();
             this.screenbtn = new System.Windows.Forms.Button();
@@ -38,22 +39,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.allscreenbtn = new System.Windows.Forms.Button();
-            this.attendbtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.attendBtn = new System.Windows.Forms.Button();
+            this.startBtn = new System.Windows.Forms.Button();
+            this.endBtn = new System.Windows.Forms.Button();
             this.studList = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.className = new System.Windows.Forms.Label();
+            this.classTime = new System.Windows.Forms.Label();
+            this.attenddanceBtn = new System.Windows.Forms.Button();
+            this.nowTime = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.stucheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.stuid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stuname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stuscreenshot = new System.Windows.Forms.DataGridViewImageColumn();
             this.stuanswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stuattend = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.className = new System.Windows.Forms.Label();
-            this.classTime = new System.Windows.Forms.Label();
-            this.attenddanceBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.studList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,34 +150,37 @@
             this.allscreenbtn.UseVisualStyleBackColor = true;
             this.allscreenbtn.Click += new System.EventHandler(this.allscreenbtn_Click);
             // 
-            // attendbtn
+            // attendBtn
             // 
-            this.attendbtn.Location = new System.Drawing.Point(531, 358);
-            this.attendbtn.Name = "attendbtn";
-            this.attendbtn.Size = new System.Drawing.Size(63, 23);
-            this.attendbtn.TabIndex = 16;
-            this.attendbtn.Text = "출석시작";
-            this.attendbtn.UseVisualStyleBackColor = true;
-            this.attendbtn.Click += new System.EventHandler(this.attendbtn_Click);
+            this.attendBtn.Location = new System.Drawing.Point(531, 358);
+            this.attendBtn.Name = "attendBtn";
+            this.attendBtn.Size = new System.Drawing.Size(63, 23);
+            this.attendBtn.TabIndex = 16;
+            this.attendBtn.Text = "출석시작";
+            this.attendBtn.UseVisualStyleBackColor = true;
+            this.attendBtn.Visible = false;
+            this.attendBtn.Click += new System.EventHandler(this.attendbtn_Click);
             // 
-            // button1
+            // startBtn
             // 
-            this.button1.Location = new System.Drawing.Point(467, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "수업시작";
-            this.button1.UseVisualStyleBackColor = true;
+            this.startBtn.Location = new System.Drawing.Point(467, 358);
+            this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(65, 23);
+            this.startBtn.TabIndex = 17;
+            this.startBtn.Text = "수업시작";
+            this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
-            // button2
+            // endBtn
             // 
-            this.button2.Location = new System.Drawing.Point(593, 358);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(61, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "수업종료";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
+            this.endBtn.Location = new System.Drawing.Point(593, 358);
+            this.endBtn.Name = "endBtn";
+            this.endBtn.Size = new System.Drawing.Size(61, 23);
+            this.endBtn.TabIndex = 18;
+            this.endBtn.Text = "수업종료";
+            this.endBtn.UseVisualStyleBackColor = true;
+            this.endBtn.Visible = false;
+            this.endBtn.Click += new System.EventHandler(this.endBtn_Click);
             // 
             // studList
             // 
@@ -192,11 +197,78 @@
             this.studList.Location = new System.Drawing.Point(28, 86);
             this.studList.Name = "studList";
             this.studList.RowHeadersVisible = false;
-            this.studList.RowTemplate.Height = 23;
+            this.studList.RowTemplate.Height = 75;
             this.studList.Size = new System.Drawing.Size(424, 266);
             this.studList.TabIndex = 19;
             this.studList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studList_CellDoubleClick);
             this.studList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.studList_CellMouseDoubleClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("굴림", 15F);
+            this.label6.Location = new System.Drawing.Point(208, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 20);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "수업 시간 : ";
+            // 
+            // className
+            // 
+            this.className.AutoSize = true;
+            this.className.Font = new System.Drawing.Font("굴림", 30F);
+            this.className.Location = new System.Drawing.Point(12, 11);
+            this.className.Name = "className";
+            this.className.Size = new System.Drawing.Size(190, 40);
+            this.className.TabIndex = 24;
+            this.className.Text = "수업 이름";
+            this.className.Click += new System.EventHandler(this.className_Click);
+            // 
+            // classTime
+            // 
+            this.classTime.AutoSize = true;
+            this.classTime.Font = new System.Drawing.Font("굴림", 12F);
+            this.classTime.Location = new System.Drawing.Point(324, 29);
+            this.classTime.Name = "classTime";
+            this.classTime.Size = new System.Drawing.Size(49, 16);
+            this.classTime.TabIndex = 25;
+            this.classTime.Text = "label8";
+            // 
+            // attenddanceBtn
+            // 
+            this.attenddanceBtn.Location = new System.Drawing.Point(365, 358);
+            this.attenddanceBtn.Name = "attenddanceBtn";
+            this.attenddanceBtn.Size = new System.Drawing.Size(87, 23);
+            this.attenddanceBtn.TabIndex = 26;
+            this.attenddanceBtn.Text = "출석부 확인";
+            this.attenddanceBtn.UseVisualStyleBackColor = true;
+            this.attenddanceBtn.Click += new System.EventHandler(this.attenddanceBtn_Click);
+            // 
+            // nowTime
+            // 
+            this.nowTime.AutoSize = true;
+            this.nowTime.Font = new System.Drawing.Font("굴림", 12F);
+            this.nowTime.Location = new System.Drawing.Point(578, 30);
+            this.nowTime.Name = "nowTime";
+            this.nowTime.Size = new System.Drawing.Size(49, 16);
+            this.nowTime.TabIndex = 28;
+            this.nowTime.Text = "label8";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("굴림", 15F);
+            this.label7.Location = new System.Drawing.Point(463, 29);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(117, 20);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "현재 시간 : ";
+            // 
+            // Timer
+            // 
+            this.Timer.Enabled = true;
+            this.Timer.Interval = 1000;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // stucheck
             // 
@@ -219,6 +291,7 @@
             // stuscreenshot
             // 
             this.stuscreenshot.HeaderText = "스크린샷 썸네일";
+            this.stuscreenshot.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.stuscreenshot.Name = "stuscreenshot";
             this.stuscreenshot.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.stuscreenshot.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -228,6 +301,7 @@
             // 
             this.stuanswer.HeaderText = "응답";
             this.stuanswer.Name = "stuanswer";
+            this.stuanswer.ReadOnly = true;
             this.stuanswer.Width = 55;
             // 
             // stuattend
@@ -236,79 +310,23 @@
             this.stuattend.Name = "stuattend";
             this.stuattend.Width = 55;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(78, 436);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(516, 21);
-            this.textBox1.TabIndex = 20;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(76, 412);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 12);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "테스트 용입니다";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("굴림", 15F);
-            this.label6.Location = new System.Drawing.Point(264, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 20);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "수업 시간 : ";
-            // 
-            // className
-            // 
-            this.className.AutoSize = true;
-            this.className.Font = new System.Drawing.Font("굴림", 30F);
-            this.className.Location = new System.Drawing.Point(12, 11);
-            this.className.Name = "className";
-            this.className.Size = new System.Drawing.Size(190, 40);
-            this.className.TabIndex = 24;
-            this.className.Text = "수업 이름";
-            // 
-            // classTime
-            // 
-            this.classTime.AutoSize = true;
-            this.classTime.Font = new System.Drawing.Font("굴림", 12F);
-            this.classTime.Location = new System.Drawing.Point(376, 31);
-            this.classTime.Name = "classTime";
-            this.classTime.Size = new System.Drawing.Size(49, 16);
-            this.classTime.TabIndex = 25;
-            this.classTime.Text = "label8";
-            // 
-            // attenddanceBtn
-            // 
-            this.attenddanceBtn.Location = new System.Drawing.Point(365, 358);
-            this.attenddanceBtn.Name = "attenddanceBtn";
-            this.attenddanceBtn.Size = new System.Drawing.Size(87, 23);
-            this.attenddanceBtn.TabIndex = 26;
-            this.attenddanceBtn.Text = "출석부 확인";
-            this.attenddanceBtn.UseVisualStyleBackColor = true;
-            this.attenddanceBtn.Click += new System.EventHandler(this.attenddanceBtn_Click);
-            // 
             // ProfesserMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(683, 478);
+            this.ClientSize = new System.Drawing.Size(683, 396);
+            this.Controls.Add(this.nowTime);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.attenddanceBtn);
             this.Controls.Add(this.classTime);
             this.Controls.Add(this.className);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.allcheck);
             this.Controls.Add(this.studList);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.attendbtn);
+            this.Controls.Add(this.endBtn);
+            this.Controls.Add(this.startBtn);
+            this.Controls.Add(this.attendBtn);
             this.Controls.Add(this.allscreenbtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -336,22 +354,23 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button allscreenbtn;
-        private System.Windows.Forms.Button attendbtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button attendBtn;
+        private System.Windows.Forms.Button startBtn;
+        private System.Windows.Forms.Button endBtn;
         private System.Windows.Forms.DataGridView studList;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label className;
+        private System.Windows.Forms.Label classTime;
+        private System.Windows.Forms.Button attenddanceBtn;
+        private System.Windows.Forms.Label nowTime;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.DataGridViewCheckBoxColumn stucheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuid;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuname;
         private System.Windows.Forms.DataGridViewImageColumn stuscreenshot;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuanswer;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuattend;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label className;
-        private System.Windows.Forms.Label classTime;
-        private System.Windows.Forms.Button attenddanceBtn;
     }
 }
 

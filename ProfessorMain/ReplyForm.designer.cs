@@ -42,7 +42,7 @@ namespace WinForms_Reply
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(13, 15);
+            this.lblName.Location = new System.Drawing.Point(204, 16);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(41, 12);
             this.lblName.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace WinForms_Reply
             // lblNum
             // 
             this.lblNum.AutoSize = true;
-            this.lblNum.Location = new System.Drawing.Point(188, 15);
+            this.lblNum.Location = new System.Drawing.Point(11, 16);
             this.lblNum.Name = "lblNum";
             this.lblNum.Size = new System.Drawing.Size(41, 12);
             this.lblNum.TabIndex = 0;

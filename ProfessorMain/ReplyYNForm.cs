@@ -26,8 +26,8 @@ namespace ProfessorMain
             stdName = "고구마";
             stdNum = "20210915";
 
-            this.lblName.Text = stdName;
-            this.lblNum.Text = stdNum;
+            this.lblName.Text += stdName;
+            this.lblNum.Text += stdNum;
 
             if (answer == 0)
             {
