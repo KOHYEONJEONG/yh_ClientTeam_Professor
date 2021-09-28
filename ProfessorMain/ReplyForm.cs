@@ -28,8 +28,8 @@ namespace WinForms_Reply
 
         private void ReplyForm_Load(object sender, EventArgs e)
         {
-            lblName.Text = stdName;
-            lblNum.Text = stdNum;
+            lblName.Text += stdName;
+            lblNum.Text += stdNum;
             txtAnswer.Text = answer;
 
         }

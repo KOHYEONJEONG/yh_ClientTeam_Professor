@@ -301,6 +301,7 @@
             // 
             this.stuanswer.HeaderText = "응답";
             this.stuanswer.Name = "stuanswer";
+            this.stuanswer.ReadOnly = true;
             this.stuanswer.Width = 55;
             // 
             // stuattend

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using WinForms_Reply;
 
 namespace ProfessorMain
 {
@@ -162,14 +163,37 @@ namespace ProfessorMain
 
             if(type == typeof(DataGridViewImageCell))
             {
+                Image img = grid.Rows[curR].Cells[curC].Value as Image;
 
+                ImageForm img_form = new ImageForm(img.ToString(), Sstime, img);
+                img_form.ShowDialog();
             }
 
-            Image img = grid.Rows[curR].Cells[curC].Value as Image;
+            /* 응답 폼 확인 */
+            if (curC == 4)
+            {
+                String reply = grid.Rows[curR].Cells[curC].Value.ToString();
+                reply = "O"; // 응답 여부 : Yes일 경우
+                if (reply == "O")
+                {
+                    int QType = 1; //질문유형 0:O/X 1:입력
+                    switch (QType)
+                    {
+                        case 0:
+                            ReplyYNForm replyYNForm = new ReplyYNForm();
+                            replyYNForm.Show();
+                            break;
+                        case 1:
+                            ReplyForm replyForm = new ReplyForm();
+                            replyForm.Show();
+                            break;
+                    }
+                }
+                else
+                {
 
-
-            ImageForm img_form = new ImageForm(img.ToString(), Sstime, img);
-            img_form.ShowDialog();
+                }
+            }
 
         }
 
